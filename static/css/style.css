@@ -10,7 +10,7 @@ body {
 .step { height: 100%; display: none; }
 
 .step.step-hello { display:block; }
-.step.step-hello .btn-empty-trash {
+.step.step-hello .btn-start {
     margin-left: auto;
     margin-right: auto;
     display: block;

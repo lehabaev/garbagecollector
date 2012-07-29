@@ -10,7 +10,7 @@ var users = [
 ];
 
 $(function() {
-    $('.btn-empty-trash').click(function() {
+    $('.btn-start').click(function() {
         $('.step').hide();
         $('.step.step-online-progress').show();
 
@@ -52,13 +52,23 @@ $(function() {
         $('.step').hide();
         $('.step.step-gambling').show();
 
-        var rand = Math.random();
-        var delta = 360 / users.length;
+        if (!users || users.length == 0) {
+            throw 'Users not found';
+        }
 
+        var userCount = users.length;
+        var rand = Math.random();
+        var looser = Math.floor(rand / (1 / userCount));
+
+        for (var i = 0; i < looser; i++) {
+            users.push(users.shift());
+        }
+
+        var delta = 360 / userCount;
         for (var i in users) {
             var user = users[i].fields;
             var item = $('<div class="item">' + user.first_name + ' ' + user.last_name + '</div>');
-            item.css('-webkit-transform', 'rotateY(' + i * delta + 'deg) translateZ(700px)')
+            item.css('-webkit-transform', 'rotateY(' + i * delta + 'deg) translateZ(700px)');
             $('.step.step-gambling .roulette').append(item);
         }
     });
