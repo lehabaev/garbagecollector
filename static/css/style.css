@@ -52,6 +52,9 @@ body {
     height: 30px;
     margin-top: 20px;
 }
+.step.step-online-list .list.list-offline .item {
+    color: #AAA;
+}
 .step.step-online-list .btn-gambling {
     margin-left: auto;
     margin-right: auto;

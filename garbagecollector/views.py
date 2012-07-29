@@ -1,6 +1,6 @@
 from django.template import Context, loader
 from django.http import HttpResponse
-from django.core import serializers
+import json
 from garbagecollector.models import User
 from network.network import network
 
@@ -10,8 +10,13 @@ def index(request):
 
 def get_online(request):
     mac_addresses = network().get_online_mac_addesses()
+    online_users = User.objects.filter(macaddress__address__in = mac_addresses)
+    online_ids = online_users.values_list('id', flat=True)
+    offline_users = User.objects.exclude(id__in = online_ids)
 
-    users = User.objects.filter(macaddress__address__in = mac_addresses);
-    data = serializers.serialize("json", users)
+    data = {
+        'online': map(lambda x: {'first_name': x.first_name, 'last_name': x.last_name}, online_users),
+        'offline': map(lambda x: {'first_name': x.first_name, 'last_name': x.last_name}, offline_users)
+    }
 
-    return HttpResponse(data, mimetype='application/json')
+    return HttpResponse(json.dumps(data), mimetype='application/json')

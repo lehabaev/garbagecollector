@@ -1,13 +1,4 @@
-var users = [
-    { 'fields': { 'first_name': 'Vasya1', 'last_name': 'Pupkin1' }},
-    { 'fields': { 'first_name': 'Vasya2', 'last_name': 'Pupkin2' }},
-    { 'fields': { 'first_name': 'Vasya2', 'last_name': 'Pupkin2' }},
-    { 'fields': { 'first_name': 'Vasya3', 'last_name': 'Pupkin3' }},
-    { 'fields': { 'first_name': 'Vasya4', 'last_name': 'Pupkin4' }},
-    { 'fields': { 'first_name': 'Vasya5', 'last_name': 'Pupkin5' }},
-    { 'fields': { 'first_name': 'Vasya6', 'last_name': 'Pupkin6' }},
-    { 'fields': { 'first_name': 'Vasya7', 'last_name': 'Pupkin7' }},
-];
+var users = [];
 
 $(function() {
     $('.btn-start').click(function() {
@@ -15,7 +6,8 @@ $(function() {
         $('.step.step-online-progress').show();
 
         $.getJSON('/get-online', function(data) {
-            //users = data;
+            users = data.online;
+            offlineUsers = data.offline;
 
             var message = '';
             var gambling = false;
@@ -38,9 +30,14 @@ $(function() {
 
             (function() {
                 var online = $('.step.step-online-list .list-online');
+                var offline = $('.step.step-online-list .list-offline');
                 for (var i in users) {
-                    var user = users[i].fields;
+                    var user = users[i];
                     online.append('<div class="item">' + user.first_name + ' ' + user.last_name + '</div>');
+                }
+                for (var i in offlineUsers) {
+                    var user = offlineUsers[i];
+                    offline.append('<div class="item">' + user.first_name + ' ' + user.last_name + '</div>');
                 }
             })();
         }).error(function() {
