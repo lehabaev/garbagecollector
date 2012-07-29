@@ -8,15 +8,31 @@
         <script type="text/javascript" src="static/js/script.js"></script>
     </head>
     <body class="container">
-        <div class="step step-hello vertical-middle">
-            <button class="btn empty-trash">Вынести мусор!</button>
+        <div class="step step-hello">
+            <button class="btn vertical-middle btn-empty-trash">Вынести мусор!</button>
         </div>
 
-        <div class="step step-get-online-progress vertical-middle">
-            <span>Смотрим, кто есть в офисе...</span>
+        <div class="step step-online-progress ">
+            <span class="message-progress vertical-middle">Смотрим, кто есть в офисе...</span>
         </div>
 
-        <div class="step step-get-online-done">
+        <div class="step step-online-list">
+            <div class="header">
+                <span class="message"></span>
+                <button class="btn btn-gambling">Да свершится предначертанное!</button>
+            </div>
+            <div class="list list-online">
+                <h3>В офисе</h3>
+            </div>
+            <div class="list list-offline">
+                <h3>Не в офисе</h3>
+            </div>
+        </div>
+
+        <div class="step step-gambling">
+            <div class="scene">
+                <div class="roulette"></div>
+            </div>
         </div>
     </body>
 </html>

@@ -7,23 +7,96 @@ body {
 
 .vertical-middle { margin-top: 100px; }
 
-.step { display: none; }
+.step { height: 100%; display: none; }
+
 .step.step-hello { display:block; }
-.step.step-get-online-progress span {
+.step.step-hello .btn-empty-trash {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 500px;
+    height: 100px;
+    font-size: 30px;
+}
+.step.step-online-progress .message-progress {
     background: url('../img/load.gif') no-repeat top left;
     padding-left: 90px;
     height: 68px;
     display: block;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 411px;
     line-height: 70px;
     font-size: 30px;
 }
 
-.step.step-hello .empty-trash {
-    margin: 0 auto;
+.step.step-online-list .header {
+    margin-bottom: 25px;
+}
+.step.step-online-list .message {
+    text-align: center;
+    height: 68px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 70px;
+    font-size: 30px;
+}
+.step.step-online-list .list {
+    width: 49%;
+    float: left;
+    text-align: center;
+}
+.step.step-online-list .list .item {
+    font-size: 28px;
+    height: 30px;
+    margin-top: 20px;
+}
+.step.step-online-list .btn-gambling {
+    margin-left: auto;
+    margin-right: auto;
     display: block;
     width: 500px;
     height: 100px;
     font-size: 30px;
+}
+
+.step.step-gambling {
+    
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 800;
+    -webkit-perspective-origin: 50% 100px;
+}
+
+.step.step-gambling .scene {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: translateZ(-700px);
+}
+
+.step.step-gambling .roulette {
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 180px;
+    height: 180px;
+    -webkit-animation: spin 10s 1 cubic-bezier(.25, 1, .8, 1);
+    -webkit-transform-style: preserve-3d;
+}
+
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotateY(0); }
+  to   { -webkit-transform: rotateY(-2880deg); }
+}
+
+.step.step-gambling .roulette .item {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    border: solid 2px #890aff;
+    background: #e2cff3;
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+    line-height: 35px;
 }

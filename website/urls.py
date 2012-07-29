@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'garbagecollector.views.index'),
-    url(r'^test/', 'garbagecollector.views.test'),
+    url(r'^get-online/', 'garbagecollector.views.get_online'),
     # url(r'^garbagecollector/', include('garbagecollector.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
