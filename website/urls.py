@@ -5,8 +5,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'garbagecollector.views.home', name='home'),
+    url(r'^$', 'garbagecollector.views.index'),
+    url(r'^test/', 'garbagecollector.views.test'),
     # url(r'^garbagecollector/', include('garbagecollector.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
