@@ -5,7 +5,7 @@ import django
 
 # calculated paths for site
 # used as starting points for various other paths
-SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+SITE_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -19,7 +19,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', 
-        'NAME': os.path.join(SITE_ROOT, '../db/db.sqlite3'),
+        'NAME': os.path.join(SITE_ROOT, 'db/db.sqlite3'),
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -74,6 +74,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    os.path.join(SITE_ROOT, "static"),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -113,7 +114,7 @@ ROOT_URLCONF = 'website.urls'
 WSGI_APPLICATION = 'website.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(SITE_ROOT, '../templates'),
+    os.path.join(SITE_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (

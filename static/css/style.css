@@ -1,0 +1,29 @@
+html {width: 100%; height: 100%; }
+body {
+    height:100%;
+    width:100%;
+    background: white;
+}
+
+.vertical-middle { margin-top: 100px; }
+
+.step { display: none; }
+.step.step-hello { display:block; }
+.step.step-get-online-progress span {
+    background: url('../img/load.gif') no-repeat top left;
+    padding-left: 90px;
+    height: 68px;
+    display: block;
+    margin: 0 auto;
+    width: 411px;
+    line-height: 70px;
+    font-size: 30px;
+}
+
+.step.step-hello .empty-trash {
+    margin: 0 auto;
+    display: block;
+    width: 500px;
+    height: 100px;
+    font-size: 30px;
+}
