@@ -63,7 +63,7 @@ $(function() {
 
         var delta = 360 / userCount;
         for (var i in users) {
-            var user = users[i].fields;
+            var user = users[i];
             var item = $('<div class="item">' + user.first_name + ' ' + user.last_name + '</div>');
             item.css('-webkit-transform', 'rotateY(' + i * delta + 'deg) translateZ(700px)');
             $('.step.step-gambling .roulette').append(item);
