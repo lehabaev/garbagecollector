@@ -10,7 +10,7 @@ def index(request):
 
 def get_online(request):
     mac_addresses = network().get_online_mac_addesses()
-    online_users = User.objects.filter(macaddress__address__in = mac_addresses)
+    online_users = User.objects.filter(macaddress__address__in = mac_addresses).distinct()
     online_ids = online_users.values_list('id', flat=True)
     offline_users = User.objects.exclude(id__in = online_ids)
 
