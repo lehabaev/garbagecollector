@@ -1,7 +1,8 @@
+from django.contrib.auth.models import User
 from django.template import Context, loader
 from django.http import HttpResponse
 import json
-from garbagecollector.models import User
+from garbagecollector.models import  MacAddress
 from network.network import network
 
 def index(request):
@@ -10,7 +11,7 @@ def index(request):
 
 def get_online(request):
     mac_addresses = network().get_online_mac_addesses()
-    online_users = User.objects.filter(macaddress__address__in = mac_addresses).distinct()
+    online_users = MacAddress.objects.filter(address__in = mac_addresses).distinct()
     online_ids = online_users.values_list('id', flat=True)
     offline_users = User.objects.exclude(id__in = online_ids)
 

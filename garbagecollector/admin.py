@@ -1,11 +1,7 @@
 from django.contrib import admin
-from garbagecollector.models import User, MacAddress
+from garbagecollector.models import MacAddress
 
-class MacAddressInline(admin.StackedInline):
-    model = MacAddress
-    extra = 1
+class MacAddressAdmin(admin.ModelAdmin):
+  pass
 
-class UserAdmin(admin.ModelAdmin):
-    inlines = [MacAddressInline]
-
-admin.site.register(User, UserAdmin)
+admin.site.register(MacAddress, MacAddressAdmin)
