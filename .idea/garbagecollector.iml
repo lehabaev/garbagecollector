@@ -14,5 +14,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="TemplatesService">
+    <option name="templateLanguage" value="Django" />
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATES_IN_JAVASCRIPT" value="true" />
+  </component>
 </module>
 

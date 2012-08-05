@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Merge list
+{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Developer</th>
+            <th>Merge Master</th>
+            <th>Branch</th>
+            <th>Status</th>
+            <th>Change date</th>
+        </tr>
+        </thead>
+    {% for merge in merge_list %}
+        <tr>
+            <td>{{ merge.developer }}</td>
+            <td>{{ merge.merge_master }}</td>
+            <td>{{ merge.branch }}</td>
+            <td>{{ merge.status }}</td>
+            <td>{{ merge.date }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

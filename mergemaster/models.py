@@ -18,7 +18,7 @@ class MergeStatus(models.Model):
 
 
 class MergeRequest(models.Model):
-  developer = models.ForeignKey(User)
+  developer = models.ForeignKey(User, blank=True)
   merge_master = models.ForeignKey(MergeMasters, blank=True)
   branch = models.CharField(max_length=60)
   status = models.ForeignKey(MergeStatus)

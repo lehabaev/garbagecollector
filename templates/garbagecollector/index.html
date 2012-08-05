@@ -1,38 +1,39 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Кто выносит мусор?</title>
-        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="static/css/style.css">
-        <script type="text/javascript" src="static/js/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="static/js/script.js"></script>
-    </head>
-    <body class="container">
-        <div class="step step-hello">
-            <button class="btn vertical-middle btn-start">Кто выносит мусор?</button>
-        </div>
+{% extends 'base.html' %}
 
-        <div class="step step-online-progress ">
-            <span class="message-progress vertical-middle">Смотрим, кто есть в офисе...</span>
-        </div>
+{% block title %}Кто выносит мусор?
+{% endblock %}
 
-        <div class="step step-online-list">
-            <div class="header">
-                <span class="message"></span>
-                <button class="btn btn-gambling">Да свершится предначертанное!</button>
-            </div>
-            <div class="list list-online">
-                <h3>В офисе</h3>
-            </div>
-            <div class="list list-offline">
-                <h3>Не в офисе</h3>
-            </div>
-        </div>
+{% block script %}
+    <script type="text/javascript" src="/static/js/script.js"></script>
 
-        <div class="step step-gambling">
-            <div class="scene">
-                <div class="roulette"></div>
-            </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="step step-hello">
+        <button class="btn vertical-middle btn-start">Кто выносит мусор?</button>
+    </div>
+
+    <div class="step step-online-progress ">
+        <span class="message-progress vertical-middle">Смотрим, кто есть в офисе...</span>
+    </div>
+
+    <div class="step step-online-list">
+        <div class="header">
+            <span class="message"></span>
+            <button class="btn btn-gambling">Да свершится предначертанное!</button>
         </div>
-    </body>
-</html>
+        <div class="list list-online">
+            <h3>В офисе</h3>
+        </div>
+        <div class="list list-offline">
+            <h3>Не в офисе</h3>
+        </div>
+    </div>
+
+    <div class="step step-gambling">
+        <div class="scene">
+            <div class="roulette"></div>
+        </div>
+    </div>
+{% endblock %}
