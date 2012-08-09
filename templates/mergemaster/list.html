@@ -4,25 +4,79 @@
 Merge list
 {% endblock %}
 {% block content %}
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Developer</th>
-            <th>Merge Master</th>
-            <th>Branch</th>
-            <th>Status</th>
-            <th>Change date</th>
-        </tr>
-        </thead>
-    {% for merge in merge_list %}
-        <tr>
-            <td>{{ merge.developer }}</td>
-            <td>{{ merge.merge_master }}</td>
-            <td>{{ merge.branch }}</td>
-            <td>{{ merge.status }}</td>
-            <td>{{ merge.date }}</td>
-        </tr>
-    {% endfor %}
-    </table>
+    <div class="container-fluid">
+        <div class="row-fluid">
 
+            <div class="span10">
+                <table class="table" id="mergelist">
+                    <thead>
+                    <tr>
+                        <th>Developer</th>
+                        <th>Merge Master</th>
+                        <th>Branch</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                        <th>Change date</th>
+                    </tr>
+                    </thead>
+                    {% for merge in merge_list %}
+                        <tr>
+                            <td>{{ merge.developer }}</td>
+                            <td><a href="{{ merge.merge_master.get_merge_master_url }}">{{ merge.merge_master }}</a></td>
+                            <td><a href="{{ merge.get_edit_url }}">{{ merge.branch }}</a></td>
+                            <td>{{ merge.status }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    {% if merge_master and merge.status.title == 'open' and merge.developer.id != user.id %}
+                                        <a href="{{ merge.get_apply_url }}" class="btn btn-success">Start Review</a>
+                                    {% endif %}
+                                    {% if merge_master and merge.status.title == 'review' and merge.merge_master.user.id == user.id %}
+                                        <a href="{{ merge.get_approve_url }}" class="btn btn-primary">Approve</a>
+                                        <a href="{{ merge.get_reject_url }}" class="btn btn-warning">Reject</a>
+                                    {% endif %}
+                                    {% if merge.developer.username == user.username and merge.status.title == 'reject' or merge_master and merge.status.title == 'reject'%}
+                                        <a href="{{ merge.get_discus_url }}" class="btn btn-info">Discussion</a>
+                                        <a href="{{ merge.get_approve_url }}" class="btn btn-primary">Approve</a>
+                                    {% endif %}
+                                    {% if merge.developer.username == user.username or merge_master %}
+                                        <a href="{{ merge.get_delete_url }}" class="btn btn-danger">Delete</a>
+                                    {% endif %}
+
+                                </div>
+                            </td>
+                            <td>{{ merge.date }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="span2" id="activityfeed">
+                <!--Sidebar content-->
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block script %}
+    <script src="/static/dataTables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+
+        $().ready(function(){
+            $table = $('#mergelist').dataTable();
+            {% if user.is_authenticated %}
+                $activitifeed = $('#activityfeed');
+                function getMessage(){
+                    $.ajax({
+                        url:'/merge/message/',
+                        success:function(data){
+                            $activitifeed.html($activitifeed.html() + data)
+                        }
+                    })
+                }
+
+            setInterval(getMessage ,5000);
+            getMessage();
+            {% endif %}
+
+        });
+    </script>
 {% endblock %}

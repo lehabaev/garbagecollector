@@ -4,7 +4,7 @@ from mergemaster.models import *
 
 
 class MergeMastersAdmin(admin.ModelAdmin):
-  pass
+  list_display = ['user','status']
 admin.site.register(MergeMasters,MergeMastersAdmin)
 
 class MergeStatusAdmin(admin.ModelAdmin):
@@ -12,10 +12,13 @@ class MergeStatusAdmin(admin.ModelAdmin):
 admin.site.register(MergeStatus, MergeStatusAdmin)
 
 class MergeRequestAdmin(admin.ModelAdmin):
-  pass
+  list_display = ['branch','status','date']
 admin.site.register(MergeRequest, MergeRequestAdmin)
 
 class MergeCommentAdmin(admin.ModelAdmin):
   pass
 admin.site.register(MergeComment, MergeCommentAdmin)
 
+class MergeNotificationAdmin(admin.ModelAdmin):
+  list_display = ['message','user']
+admin.site.register(MergeNotification, MergeNotificationAdmin)
