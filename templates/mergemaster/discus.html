@@ -4,5 +4,36 @@
 Discus about {{ merge_request.title }}
 {% endblock %}
 {% block content %}
-in progress
+    <h1>{{ merge_request.title }}</h1>
+    <p><b>developer:</b> {{ merge_request.developer }}</p>
+    <p><b>Merge Master:</b> {{ merge_request.merge_master }}</p>
+    <div class="well" id="chat">
+        {% include 'mergemaster/discus-message.html' %}
+    </div>
+    <form action="" class="chat" method="post">
+        {{ form.as_p }}
+        <input type="submit" class="btn" id="sendMessage" value="Send message">{% csrf_token %}
+    </form>
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+    $().ready(function(){
+        $('#sendMessage').click(function(){
+            var form = $(this).parent('form');
+            $('#id_last_message').val($('#chat .alert').first().attr('id').split('message-')[1]);
+            $('#id_last_message').val();
+            $.ajax({
+                url:form.attr('action'),
+                type: 'post',
+                data: form.serialize(),
+                success: function(data){
+//                    last_message
+                    $('#chat').prepend(data)
+                }
+            });
+            return false;
+        })
+    })
+    </script>
 {% endblock %}

@@ -43,6 +43,8 @@ class MergeRequest(models.Model):
     return '/merge/reject/%s'%self.id
   def get_discus_url(self):
     return '/merge/discus/%s'%self.id
+
+
 class MergeComment(models.Model):
   merge_request = models.ForeignKey(MergeRequest)
   user = models.ForeignKey(User)

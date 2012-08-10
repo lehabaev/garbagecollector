@@ -1,11 +1,13 @@
 # coding: utf-8
+import json
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
+from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
-from mergemaster.forms import MergeRequestForm
+from mergemaster.forms import MergeRequestForm, MergeCommentForm
 from mergemaster.models import MergeRequest, MergeMasters, MergeStatus, MergeComment, MergeNotification
 
 
@@ -100,13 +102,28 @@ def MergeAction(request, action, pid):
 # уже без создания нового объекта либо как то продолжается тот.. Дописывается в него и т.д...
 @login_required(login_url='/admin/')
 def MergeDiscus(request, pid):
+
   try:
     merge_request = MergeRequest.objects.get(id=pid)
-    comments_list = MergeComment.objects.get(merge_request__id=pid)
+
+    if request.method == 'POST':
+      form = MergeCommentForm(request.POST)
+      if form.is_valid():
+        form.save()
+        if request.is_ajax():
+          comments_list  = MergeComment.objects.filter(merge_request__id = pid, id__gt = form.cleaned_data.get('last_message'))
+          return render_to_response('mergemaster/discus-message.html',{'comments_list':comments_list})
+        else:
+          return HttpResponseRedirect('/merge/discus/%s/'%pid)
+    else:
+      form = MergeCommentForm(initial={'user':request.user,'merge_request':merge_request})
+
+    comments_list = MergeComment.objects.filter(merge_request__id=pid).order_by('-date')
+
     return render_to_response('mergemaster/discus.html',
-        {'merge_request': merge_request, 'comments_list': comments_list},
+        {'merge_request': merge_request, 'comments_list': comments_list,'form':form},
       context_instance=RequestContext(request))
-  except MergeRequest.DoesNotExist:
+  except MergeRequest.DoesNotExist or MergeComment.DoesNotExist:
     raise Http404
 
 

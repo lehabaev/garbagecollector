@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 from django import forms
-from mergemaster.models import MergeRequest
+from mergemaster.models import MergeRequest, MergeComment
 
 __author__ = 'lehabaev'
 
@@ -13,3 +13,13 @@ class MergeRequestForm(forms.ModelForm):
 
     for key in self.fields:
       self.fields[key].required = False
+
+class MergeCommentForm(forms.ModelForm):
+  last_message = forms.IntegerField(required=False)
+  class Meta:
+    model = MergeComment
+    widgets={
+      'user':forms.HiddenInput(),
+      'merge_request':forms.HiddenInput(),
+      'last_message':forms.HiddenInput()
+    }
