@@ -8,6 +8,11 @@ Merge list
         <div class="row-fluid">
 
             <div class="span10">
+                <div class="btn-group panel" >
+                    <a href="#" id="merg" class="btn"><i class="icon-wrench"></i> I merged</a>
+                    <a href="#" id="develop" class="btn">I developer</a>
+                    <a href="#" id="clear" class="btn btn-info">Show all</a>
+                </div>
                 <table class="table" id="mergelist">
                     <thead>
                     <tr>
@@ -16,6 +21,7 @@ Merge list
                         <th>Branch</th>
                         <th>Status</th>
                         <th>Action</th>
+                        <th>Pivotal</th>
                         <th>Change date</th>
                     </tr>
                     </thead>
@@ -27,23 +33,24 @@ Merge list
                             <td>{{ merge.status }}</td>
                             <td>
                                 <div class="btn-group">
-                                    {% if merge_master and merge.status.title == 'open' and merge.developer.id != user.id %}
+                                    {% if merge_master and merge.status == 'open' and merge.developer.id != user.id %}
                                         <a href="{{ merge.get_apply_url }}" class="btn btn-success">Start Review</a>
                                     {% endif %}
-                                    {% if merge_master and merge.status.title == 'review' and merge.merge_master.user.id == user.id %}
+                                    {% if merge_master and merge.status == 'review' and merge.merge_master.user.id == user.id %}
+                                        <a href="{{ merge.get_cancel_url }}" class="btn">Cancel</a>
                                         <a href="{{ merge.get_approve_url }}" class="btn btn-primary">Approve</a>
                                         <a href="{{ merge.get_reject_url }}" class="btn btn-warning">Reject</a>
                                     {% endif %}
-                                    {% if merge.developer.username == user.username and merge.status.title == 'reject' or merge_master and merge.status.title == 'reject'%}
+                                    {% if merge.developer.username == user.username and merge.status == 'reject' or merge_master and merge.status == 'reject'%}
                                         <a href="{{ merge.get_discus_url }}" class="btn btn-info">Discussion</a>
                                         <a href="{{ merge.get_approve_url }}" class="btn btn-primary">Approve</a>
                                     {% endif %}
                                     {% if merge.developer.username == user.username or merge_master %}
                                         <a href="{{ merge.get_delete_url }}" class="btn btn-danger">Delete</a>
                                     {% endif %}
-
                                 </div>
                             </td>
+                            <td><a href="#" class="btn">Pivotal</a></td>
                             <td>{{ merge.date }}</td>
                         </tr>
                     {% endfor %}
@@ -59,9 +66,32 @@ Merge list
 {% block script %}
     <script src="/static/dataTables/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript">
+        $.fn.dataTableExt.oApi.fnResetAllFilters = function (oSettings, bDraw/*default true*/) {
+            for(iCol = 0; iCol < oSettings.aoPreSearchCols.length; iCol++) {
+                oSettings.aoPreSearchCols[ iCol ].sSearch = '';
+            }
+            oSettings.oPreviousSearch.sSearch = '';
+            if(typeof bDraw === 'undefined') bDraw = true;
+            if(bDraw) this.fnDraw();
+        };
 
+//        todo ajax add new request or changed action
         $().ready(function(){
             $table = $('#mergelist').dataTable();
+            $('#clear').click(function(){
+                $table.fnResetAllFilters(false);
+                return false;
+            });
+            $('#merg').click(function(){
+                $table.fnResetAllFilters(false);
+                $table.fnFilter('{{ user.username }}',1);
+               return false;
+            });
+            $('#develop').click(function(){
+                $table.fnResetAllFilters(false);
+                $table.fnFilter('{{ user.username }}',0);
+                return false;
+            });
             {% if user.is_authenticated %}
                 $activitifeed = $('#activityfeed');
                 function getMessage(){

@@ -4,7 +4,7 @@
 Discus about {{ merge_request.title }}
 {% endblock %}
 {% block content %}
-    <h1>{{ merge_request.title }}</h1>
+    <h1>{{ merge_request.branch }} <a href="{{ merge_request.get_approve_url }}" class="btn ">Approve</a></h1>
     <p><b>developer:</b> {{ merge_request.developer }}</p>
     <p><b>Merge Master:</b> {{ merge_request.merge_master }}</p>
     <div class="well" id="chat">
@@ -19,6 +19,21 @@ Discus about {{ merge_request.title }}
 {% block script %}
     <script type="text/javascript">
     $().ready(function(){
+        function getMessage(){
+            $('#id_last_message').val($('#chat .alert').first().attr('id').split('message-')[1]);
+            var last_message = $('#id_last_message').val();
+            $.ajax({
+                url:'/merge/discus/load/{{ merge_request.id }}/',
+                type: 'post',
+                data:{'last_message':last_message},
+                success: function(data){
+//                    last_message
+                    $('#chat').prepend(data)
+                }
+            })
+        }
+        setInterval(getMessage ,5000);
+
         $('#sendMessage').click(function(){
             var form = $(this).parent('form');
             $('#id_last_message').val($('#chat .alert').first().attr('id').split('message-')[1]);
@@ -32,6 +47,7 @@ Discus about {{ merge_request.title }}
                     $('#chat').prepend(data)
                 }
             });
+            $('#id_message').html('').val('');
             return false;
         })
     })

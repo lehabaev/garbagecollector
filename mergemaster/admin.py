@@ -7,10 +7,6 @@ class MergeMastersAdmin(admin.ModelAdmin):
   list_display = ['user','status']
 admin.site.register(MergeMasters,MergeMastersAdmin)
 
-class MergeStatusAdmin(admin.ModelAdmin):
-  pass
-admin.site.register(MergeStatus, MergeStatusAdmin)
-
 class MergeRequestAdmin(admin.ModelAdmin):
   list_display = ['branch','status','date']
 admin.site.register(MergeRequest, MergeRequestAdmin)

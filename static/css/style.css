@@ -122,3 +122,6 @@ body {
 .chat #id_message{
   width: 100%;
 }
+.panel{
+    margin-bottom: 30px;
+}

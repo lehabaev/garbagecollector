@@ -1,5 +1,5 @@
 {% for comments in comments_list %}
-    <div class="alert alert-{% if comments.user == request.user %}info{% else %}success{% endif %} " id="message-{{ comments.id }}">
+    <div class="alert alert-{% if comments.user.username == user.username %}info{% else %}success{% endif %} " id="message-{{ comments.id }}">
         <div class="user">
             {{ comments.user }} {{ comments.date|timesince }} ago
         </div>

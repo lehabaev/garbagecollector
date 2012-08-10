@@ -11,20 +11,20 @@ class MergeMasters(models.Model):
   def get_merge_master_url(self):
     return '/merge/user/%s'%self.user.id
 
-class MergeStatus(models.Model):
-  title = models.CharField(max_length=60)
-  desc = models.TextField(blank=True)
-  default = models.BooleanField()
-
-  def __unicode__(self):
-    return self.title
+MERGE_MASTER = (
+    ('open','open'),
+    ('apply','apply'),
+    ('approve','approve'),
+    ('reject','reject'),
+    ('review','review')
+)
 
 
 class MergeRequest(models.Model):
   developer = models.ForeignKey(User, blank=True, null=True)
   merge_master = models.ForeignKey(MergeMasters, blank=True, null=True)
   branch = models.CharField(max_length=60)
-  status = models.ForeignKey(MergeStatus, default = MergeStatus.objects.get(default = True).id)
+  status = models.CharField(max_length=60, choices=MERGE_MASTER)
   date = models.DateTimeField(auto_now=True, verbose_name='Date last changes')
 
   def __unicode__(self):
@@ -43,6 +43,8 @@ class MergeRequest(models.Model):
     return '/merge/reject/%s'%self.id
   def get_discus_url(self):
     return '/merge/discus/%s'%self.id
+  def get_cancel_url(self):
+      return '/merge/open/%s'%self.id
 
 
 class MergeComment(models.Model):

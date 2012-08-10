@@ -15,11 +15,10 @@ class MergeRequestForm(forms.ModelForm):
       self.fields[key].required = False
 
 class MergeCommentForm(forms.ModelForm):
-  last_message = forms.IntegerField(required=False)
+  last_message = forms.IntegerField(required=False, widget=forms.HiddenInput())
   class Meta:
     model = MergeComment
     widgets={
       'user':forms.HiddenInput(),
-      'merge_request':forms.HiddenInput(),
-      'last_message':forms.HiddenInput()
+      'merge_request':forms.HiddenInput()
     }
