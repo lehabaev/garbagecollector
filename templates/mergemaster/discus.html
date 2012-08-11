@@ -36,8 +36,11 @@ Discus about {{ merge_request.title }}
 
         $('#sendMessage').click(function(){
             var form = $(this).parent('form');
-            $('#id_last_message').val($('#chat .alert').first().attr('id').split('message-')[1]);
-            $('#id_last_message').val();
+            var last_message = 0;
+            if ($('#chat .alert').first().attr('id')){
+                last_message = $('#chat .alert').first().attr('id').split('message-')[1];
+            }
+            $('#id_last_message').val(last_message);
             $.ajax({
                 url:form.attr('action'),
                 type: 'post',

@@ -66,8 +66,19 @@ class MergeNotification(models.Model):
   message = models.TextField()
   date = models.DateTimeField(auto_now=True)
   user = models.ForeignKey(User)
+  request = models.IntegerField(blank=True, null=True)
   type = models.CharField(max_length=60, choices=TYPE_MERGE)
 
   def __unicode__(self):
     return self.message
+
+
+class MergeStats(models.Model):
+  merge_master = models.ForeignKey(MergeMasters)
+  action = models.CharField(max_length=60, choices=MERGE_MASTER)
+  date  = models.DateTimeField(auto_now_add=True)
+
+  def __unicode__(self):
+    return '%s %s'%(self.merge_master.user.username, self.action)
+
 

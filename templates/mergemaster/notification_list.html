@@ -2,5 +2,6 @@
     <div class="alert alert-{{ notification.type }}">
         <button class="close" data-dismiss="alert">×</button>
         {{ notification.message|safe }}
+        <script type="text/javascript">rowUpdate({{ notification.request }})</script>
     </div>
 {% endfor %}

@@ -18,3 +18,7 @@ admin.site.register(MergeComment, MergeCommentAdmin)
 class MergeNotificationAdmin(admin.ModelAdmin):
   list_display = ['message','user']
 admin.site.register(MergeNotification, MergeNotificationAdmin)
+
+class MergeStatsAdmin(admin.ModelAdmin):
+  pass
+admin.site.register(MergeStats, MergeStatsAdmin)

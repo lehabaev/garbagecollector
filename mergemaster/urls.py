@@ -6,6 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
   url(r'message/$', 'mergemaster.views.AjaxMergeNotification'),
+  url(r'table/(?P<pid>(\d+))/$', 'mergemaster.views.MergeTableRow', name='table_row_update'),
+  url(r'user/(?P<pid>(\d+))/$', 'mergemaster.views.MergeMasterStats'),
   url(r'^$', 'mergemaster.views.MergeList'),
   url(r'^discus/(?P<pid>(\d+))/$', 'mergemaster.views.MergeDiscus'),
   url(r'^discus/load/(?P<pid>(\d+))/$', 'mergemaster.views.MergeDiscusLoad'),

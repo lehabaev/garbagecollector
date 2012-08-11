@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ merge_master.user }}
+{% endblock %}
+{% block content %}
+    <h2>Merge Master Statistic</h2>
+    <b>Started: {{ review }}</b>
+    <b>Cancel: {{ cancel }}</b>
+    <b>delete: {{ delete }}</b>
+    <b>reject: {{ reject }}</b>
+    <b>approve: {{ approve }}</b>
+    <div class="clearfix">
+        <h1>Angel</h1>
+{{ devil_formula }}
+        <div>
+            <div class="progress progress-striped active">
+                <div class="bar"
+                     style="width: {{ devil_formula }}%;"></div>
+            </div>
+        </div>
+        <h2>Devil</h2>
+    </div>
+{% endblock %}

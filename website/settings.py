@@ -18,11 +18,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', 
-        'NAME': os.path.join(SITE_ROOT, 'db/db.sqlite3'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'happyteam',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django_openid_auth',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -162,3 +163,15 @@ LOGGING = {
         },
     }
 }
+## google auth
+AUTHENTICATION_BACKENDS = (
+  ('profile.auth.GoogleBackend'),
+  ('django.contrib.auth.backends.ModelBackend'),
+  )
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_URL = '/logout/'
+OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/id'
+
+#auto create new user if your firm email owner
+EMAIL_VALIDATE  = 'renderedsource.com'

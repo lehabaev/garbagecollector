@@ -1,0 +1,14 @@
+{% if merge %}
+<tr class="pid-{{ merge.id }}">
+    <td>{{ merge.id }}</td>
+    <td>{{ merge.developer }}</td>
+    <td><a href="{{ merge.merge_master.get_merge_master_url }}">{{ merge.merge_master }}</a></td>
+    <td><a href="{{ merge.get_edit_url }}">{{ merge.branch }}</a></td>
+    <td>{{ merge.status }}</td>
+    <td>
+       {% include 'mergemaster/merge-table-row-actions.html' %}
+    </td>
+    {#                            <td><a href="#" class="btn">Pivotal</a></td>#}
+    <td>{{ merge.date }}</td>
+</tr>
+{% endif %}
