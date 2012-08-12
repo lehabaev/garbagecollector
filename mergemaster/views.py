@@ -31,12 +31,13 @@ def ApiAddRequest(request):
     form.developer = User.objects.get(email=request.POST.get('email'))
     form.save()
     message = {
-      'text': 'Create new request %s' % (form.branch),
+      'text': 'Please merge new branch %s Developer: %s' % (form.branch, form.developer),
       'type': 'info'
     }
     for user in MergeMasters.objects.all():
       MergeNotification.objects.create(message=message.get('text'), type=message.get('type'), user=user.user,
         request=form.id).save()
+      JabberNotificate(message.get('text'), user.user.email)
 
   else:
     message = 'Error %s' % form.errors
@@ -212,17 +213,18 @@ def MergeMasterStats(request, pid):
 
 import xmpp, time
 
-def JabberNotificate(request):
+def JabberNotificate(message, recipient):
   jid = xmpp.protocol.JID(settings.JABBER_ID)
   cl = xmpp.Client(jid.getDomain(), debug=[])
   conn = cl.connect()
+#  todo test stable
   if conn:
     auth = cl.auth(jid.getNode(), settings.JABBER_PASSWORD,
       resource=jid.getResource())
     if auth:
-      id = cl.send(xmpp.protocol.Message('lehabaev@gmail.com',
-        'hello world'))
+      cl.send(xmpp.protocol.Message(recipient,
+        message))
       # Некоторые старые сервера не отправляют сообщения,
       # если вы немедленно отсоединяетесь после отправки
       time.sleep(1)
-  return HttpResponse(request)
+

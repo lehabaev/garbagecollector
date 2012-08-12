@@ -20,7 +20,9 @@ class GoogleBackend:
       if settings.EMAIL_VALIDATE and re.search(settings.EMAIL_VALIDATE, google_email):
         user = User.objects.create(username=google_email, email=google_email, password='test', first_name=google_firstname
         , last_name=google_lastname).save()
-
+      else:
+        user = User.objects.create(username=google_email, email=google_email, password='test', first_name=google_firstname
+          , last_name=google_lastname).save()
     return user
 
   def get_user(self, user_id):
