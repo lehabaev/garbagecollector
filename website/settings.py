@@ -176,5 +176,5 @@ OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/id'
 #auto create new user if your firm email owner
 EMAIL_VALIDATE  = 'renderedsource.com'
 
-JABBER_ID = 'admin@notaz.ru'
-JABBER_PASSWORD = '89043280777'
+JABBER_ID = ''
+JABBER_PASSWORD = ''
