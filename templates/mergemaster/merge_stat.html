@@ -11,14 +11,34 @@
     <b>reject: {{ reject }}</b>
     <b>approve: {{ approve }}</b>
     <div class="clearfix">
-        <h1>Angel</h1>
-{{ devil_formula }}
-        <div>
-            <div class="progress progress-striped active">
-                <div class="bar"
-                     style="width: {{ devil_formula }}%;"></div>
-            </div>
+        <div class="angel"></div>
+        <div class="dev">
+
+            <div class="blue"></div>
+            <div class="red"></div>
+
         </div>
-        <h2>Devil</h2>
+        <div class="devil"></div>
     </div>
+{% endblock %}
+{% block script %}
+    <script type="text/javascript">
+    $().ready(function(){
+        var approve = {{ approve }};
+        var reject = {{ reject }};
+        var all = approve + reject;
+
+        var devil = reject / all * 100;
+        if (devil == 0){
+            $('.dev').html('<h1>100% Angel</h1>')
+        }
+        else if (devil == 100){
+            $('.dev').html('<h1>100% Devil(SATANA)</h1>')
+        }
+        else{
+            $('.dev .red').css('width',devil+'%').html(devil + '%');
+            $('.dev .blue').css('width',100 - devil+'%').html(100 - devil + '%');
+        }
+    })
+    </script>
 {% endblock %}

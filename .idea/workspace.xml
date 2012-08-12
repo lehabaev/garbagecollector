@@ -2,61 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea06852d-789c-4735-949f-c5a84361c647" name="Default" comment="add :discus chat &#10;google auth,&#10;login logout,&#10; merge master stat, fix bugs&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-icons_228ef1_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-icons_ef8c08_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-icons_ffd27a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/auth.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/exceptions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/management/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/management/commands/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/management/commands/openid_cleanup.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/signals.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/store.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/teams.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/templates/openid/failure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/templates/openid/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/tests/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/tests/test_auth.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/tests/test_store.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/tests/test_views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/tests/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django_openid_auth/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profile/auth.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/js/jquery-1.7.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jqueryui/js/jquery-ui-1.8.22.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/mergemaster/merge-table-row-actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/mergemaster/merge-table-row.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/mergemaster/merge_stat.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/garbagecollector.iml" afterPath="$PROJECT_DIR$/.idea/garbagecollector.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mergemaster/admin.py" afterPath="$PROJECT_DIR$/mergemaster/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mergemaster/models.py" afterPath="$PROJECT_DIR$/mergemaster/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mergemaster/urls.py" afterPath="$PROJECT_DIR$/mergemaster/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mergemaster/views.py" afterPath="$PROJECT_DIR$/mergemaster/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page.html" afterPath="$PROJECT_DIR$/page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mergemaster/discus.html" afterPath="$PROJECT_DIR$/templates/mergemaster/discus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mergemaster/list.html" afterPath="$PROJECT_DIR$/templates/mergemaster/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mergemaster/notification_list.html" afterPath="$PROJECT_DIR$/templates/mergemaster/notification_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mergemaster/merge_stat.html" afterPath="$PROJECT_DIR$/templates/mergemaster/merge_stat.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/settings.py" afterPath="$PROJECT_DIR$/website/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/urls.py" afterPath="$PROJECT_DIR$/website/urls.py" />
     </list>
     <list id="56490570-8280-49f1-bbf0-47eb2509ce70" name="Failed commit: Default" comment="Add .idea to gitignore file" />
     <ignored path="garbagecollector.iws" />
@@ -79,10 +30,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="11" selection-start="35" selection-end="55" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="179" column="0" selection-start="5354" selection-end="5354" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mergemaster/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="203" column="29" selection-start="7975" selection-end="7975" vertical-scroll-proportion="0.0">
+            <state line="227" column="30" selection-start="8877" selection-end="8877" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#16#27#0" expanded="true" />
               </folding>
@@ -90,37 +59,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="157" column="17" selection-start="3012" selection-end="3012" vertical-scroll-proportion="0.878453">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="merge_stat.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/mergemaster/merge_stat.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="16" selection-start="373" selection-end="373" vertical-scroll-proportion="-8.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mergemaster/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="12" selection-start="413" selection-end="419" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="merge-table-row.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/mergemaster/merge-table-row.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="47" selection-start="157" selection-end="157" vertical-scroll-proportion="-2.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="merge-table-row-actions.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/mergemaster/merge-table-row-actions.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.6927711">
+            <state line="39" column="66" selection-start="1108" selection-end="1108" vertical-scroll-proportion="-15.75">
               <folding />
             </state>
           </provider>
@@ -129,7 +80,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mergemaster/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="67" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+            <state line="7" column="12" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -152,22 +103,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/website/urls.py" />
-        <option value="$PROJECT_DIR$/profile/tests.py" />
         <option value="$PROJECT_DIR$/django_openid_auth/models.py" />
         <option value="$PROJECT_DIR$/mergemaster/models.py" />
         <option value="$PROJECT_DIR$/templates/mergemaster/notification_list.html" />
         <option value="$PROJECT_DIR$/templates/mergemaster/merge-table-row-json.html" />
-        <option value="$PROJECT_DIR$/website/settings.py" />
         <option value="$PROJECT_DIR$/profile/auth.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/mergemaster/merge-table-row.html" />
         <option value="$PROJECT_DIR$/templates/mergemaster/list.html" />
         <option value="$PROJECT_DIR$/templates/mergemaster/discus.html" />
-        <option value="$PROJECT_DIR$/mergemaster/urls.py" />
-        <option value="$PROJECT_DIR$/templates/mergemaster/merge_stat.html" />
-        <option value="$PROJECT_DIR$/mergemaster/views.py" />
         <option value="$PROJECT_DIR$/templates/mergemaster/merge-table-row-actions.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/website/settings.py" />
+        <option value="$PROJECT_DIR$/mergemaster/urls.py" />
+        <option value="$PROJECT_DIR$/mergemaster/views.py" />
+        <option value="$PROJECT_DIR$/templates/mergemaster/merge_stat.html" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -230,20 +181,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="garbagecollector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="garbagecollector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -276,7 +213,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="profile" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="garbagecollector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="garbagecollector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -312,7 +267,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="options.lastSelected" value="com.intellij.tasks.config.TaskRepositoriesConfigurable" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
@@ -565,7 +520,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1280" height="976" extended-state="0" />
+    <frame x="0" y="24" width="1280" height="976" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -573,10 +528,10 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278302" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39976415" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900944" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900944" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26217532" sideWeight="0.21816038" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28652596" sideWeight="0.6709906" order="0" side_tool="false" content_ui="combo" />
@@ -648,34 +603,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/profile/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.6/dist-packages/django/template/defaulttags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1196" column="4" selection-start="42388" selection-end="42388" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="908" column="18" selection-start="13868" selection-end="13868" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="14" selection-start="5285" selection-end="5299" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profile/auth.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="17" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.55203044">
@@ -713,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mergemaster/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="67" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/mergemaster/list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="47" selection-start="2781" selection-end="2781" vertical-scroll-proportion="0.31578946">
@@ -729,37 +649,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mergemaster/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="12" selection-start="413" selection-end="419" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mergemaster/merge_stat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="373" selection-end="373" vertical-scroll-proportion="-8.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mergemaster/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="203" column="29" selection-start="7975" selection-end="7975" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#16#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mergemaster/merge-table-row.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="47" selection-start="157" selection-end="157" vertical-scroll-proportion="-2.5">
+        <state line="17" column="12" selection-start="413" selection-end="419" vertical-scroll-proportion="0.2919708">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/mergemaster/merge-table-row-actions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.6927711">
+        <state line="23" column="0" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.43233082">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mergemaster/merge-table-row.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="47" selection-start="157" selection-end="157" vertical-scroll-proportion="0.075187966">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="11" selection-start="35" selection-end="55" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="179" column="0" selection-start="5354" selection-end="5354" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mergemaster/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="12" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.6/dist-packages/django/views/defaults.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="4" selection-start="823" selection-end="823" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mergemaster/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="227" column="30" selection-start="8877" selection-end="8877" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#16#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mergemaster/merge_stat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="66" selection-start="1108" selection-end="1108" vertical-scroll-proportion="-15.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="157" column="17" selection-start="3012" selection-end="3012" vertical-scroll-proportion="0.878453">
           <folding />
         </state>
       </provider>

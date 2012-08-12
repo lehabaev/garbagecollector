@@ -125,3 +125,35 @@ body {
 .panel{
     margin-bottom: 30px;
 }
+
+.angel, .devil{
+  background: url('/static/img/angel-devil.jpg');
+background-size: 250px;
+  width: 125px;
+  height: 250px;
+  float: left;
+}
+.angel{
+  background-position: 125px 0;
+}
+.dev {
+  float: left;
+  width: 300px;
+  height: 20px;
+  border-radius: 10px;
+  margin-top: 120px;
+  text-align: center;
+}
+.dev .blue{
+  background: #9ce3f5;
+  height: 20px;
+  float: left;
+  border-radius: 10px 0 0 10px;
+}
+.dev .red{
+  height: 20px;
+  float: left;
+  background: #a10c07;
+  border-radius: 0 10px 10px 0;
+  color: #ffffff;
+}

@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+  url(r'test/$', 'mergemaster.views.JabberNotificate'),
   url(r'message/$', 'mergemaster.views.AjaxMergeNotification'),
   url(r'table/(?P<pid>(\d+))/$', 'mergemaster.views.MergeTableRow', name='table_row_update'),
   url(r'user/(?P<pid>(\d+))/$', 'mergemaster.views.MergeMasterStats'),

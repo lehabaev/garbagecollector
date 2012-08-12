@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^get-online/', 'garbagecollector.views.get_online'),
     url(r'^merge/', include('mergemaster.urls')),
 
-  # url(r'^garbagecollector/', include('garbagecollector.foo.urls')),
+  # url(r'^happyteam/', include('happyteam.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

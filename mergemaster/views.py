@@ -9,10 +9,12 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
+from django.views.defaults import server_error
 import simplejson
 from simplejson.encoder import JSONEncoder
 from mergemaster.forms import MergeRequestForm, MergeCommentForm
 from mergemaster.models import MergeRequest, MergeMasters, MergeComment, MergeNotification, MergeStats
+from website import settings
 
 
 @csrf_exempt
@@ -201,10 +203,26 @@ def MergeMasterStats(request, pid):
     approve = merge_stat.filter(action='approve').count()
     review = merge_stat.filter(action='review').count()
     delete = merge_stat.filter(action='delete').count()
-    devil_formula = reject / (approve + reject)
     return render_to_response('mergemaster/merge_stat.html',
         {'merge_master': merge_master, 'reject': reject, 'cancel': cancel, 'approve': approve, 'reject': reject,
-         'review': review,'delete':delete,'devil_formula':devil_formula},
+         'review': review,'delete':delete},
       context_instance=RequestContext(request))
   except MergeMasters.DoesNotExist:
     raise Http404
+
+import xmpp, time
+
+def JabberNotificate(request):
+  jid = xmpp.protocol.JID(settings.JABBER_ID)
+  cl = xmpp.Client(jid.getDomain(), debug=[])
+  conn = cl.connect()
+  if conn:
+    auth = cl.auth(jid.getNode(), settings.JABBER_PASSWORD,
+      resource=jid.getResource())
+    if auth:
+      id = cl.send(xmpp.protocol.Message('lehabaev@gmail.com',
+        'hello world'))
+      # Некоторые старые сервера не отправляют сообщения,
+      # если вы немедленно отсоединяетесь после отправки
+      time.sleep(1)
+  return HttpResponse(request)

@@ -1,5 +1,9 @@
 # GarbageCollector
 
+##Need install
+easy_install xmpppy
+easy_install dnspython
+
 *GarbageCollector* - тулза для определения, кому выпадет жребий выбрасывать мусор в офисе :)
 
 Работает так:
